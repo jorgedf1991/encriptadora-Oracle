@@ -25,13 +25,13 @@ function encriptarCodigo() {
   if (capturarText.value == "") {
     notificacion.innerHTML = "No has ingresado ningún Texto.";
     buttonCopiar.style.display = "none";
+    console.log(notificacion);
   } else {
     for (let i = 0; i < capturarText.value.length; i++) {
       const letraActual = capturarText.value[i];
       textoEncriptador += reemplazos[letraActual] || letraActual;
     }
-    // notificacion.innerHTML = "";
-    // buttonCopiar.style.display = "block";
+     buttonCopiar.style.display = "block";
   }
 
   outputSection.style.display = "block";
@@ -40,11 +40,11 @@ function encriptarCodigo() {
 }
 
 function desencriptarCodigo() {
-  let capturarText = document.querySelector("#boxEncriptar");
-  let resultado = document.querySelector(".resultado");
-  let textoDesencriptado = capturarText.value;
+  let capturarText = document.querySelector("#inputText");
+  let resultado = document.querySelector(".outputSection-box");
+  let textoDesencriptado = capturarText.value; 
 
-  if (textoDesencriptado === "") {
+  if (capturarText.value == "") {
     notificacion.innerHTML = "No has ingresado ningún Texto.";
     buttonCopiar.style.display = "none";
   } else {
@@ -57,8 +57,8 @@ function desencriptarCodigo() {
         );
       }
     }
-    notificacion.innerHTML = "";
-    buttonCopiar.style.display = "block";
+    console.log(textoDesencriptado);
+     buttonCopiar.style.display = "block";
   }
 
   resultado.innerHTML = textoDesencriptado;
