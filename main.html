@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Encriptadora de Texto</title>
+  </head>
+  <body>
+    <header>
+      <h1>Encriptadora de Texto</h1>
+    </header>
+
+    <main>
+      <section class="formulario">
+        <textarea
+          id="inputText"
+          rows="20"
+          cols="40"
+          placeholder="Ingrese el texto:"
+        ></textarea
+        ><br />
+        <div>
+          <button class="btn-encriptar" onclick="encriptarCodigo();">
+            Encriptar
+          </button>
+          <button class="btn-desencriptar" onclick="desencriptarCodigo();">
+            Desencriptar
+          </button>
+        </div>
+      </section>
+
+      <section id="outputSection" class="outputSection-box">
+        <img src="./image/Muñeco.png" alt="" /><br />
+        <strong>No se encontro ningun mensaje para encriptar</strong>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Trabajo de Programador IT Web</p>
+    </footer>
+
+    <script src="js/scrip.js"></script>
+  </body>
+</html>
