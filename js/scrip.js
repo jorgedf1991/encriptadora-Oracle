@@ -6,7 +6,7 @@ const reemplazos = {
   u: "ufat",
 };
 
-const notificacion = document.querySelector(".notificacion");
+// const notificacion = document.querySelector(".notificacion");
 const buttonCopiar = document.querySelector(".copiarText");
 const reemplazosEncriptado = {
   ai: "a",
@@ -20,21 +20,24 @@ function encriptarCodigo() {
   let capturarText = document.querySelector("#inputText");
   let resultado = document.querySelector(".outputSection-box");
   let outputSection = document.querySelector("#outputSection");
+  let textNoEncontrado = document.querySelector(".mensaje-section ");
   let textoEncriptador = "";
 
   if (capturarText.value == "") {
-    notificacion.innerHTML = "No has ingresado ningún Texto.";
     buttonCopiar.style.display = "none";
-    console.log(notificacion);
+    textNoEncontrado.style.display = "block";
+    resultado.style.display = "none";
+    outputSection.style.display = "none";
   } else {
     for (let i = 0; i < capturarText.value.length; i++) {
       const letraActual = capturarText.value[i];
       textoEncriptador += reemplazos[letraActual] || letraActual;
     }
      buttonCopiar.style.display = "block";
+     outputSection.style.display = "block";
+    textNoEncontrado.style.display = "none";
   }
 
-  outputSection.style.display = "block";
   resultado.innerHTML = textoEncriptador;
   capturarText.value = "";
 }
@@ -42,11 +45,14 @@ function encriptarCodigo() {
 function desencriptarCodigo() {
   let capturarText = document.querySelector("#inputText");
   let resultado = document.querySelector(".outputSection-box");
+  let textNoEncontrado = document.querySelector(".mensaje-section ");
   let textoDesencriptado = capturarText.value; 
 
   if (capturarText.value == "") {
-    notificacion.innerHTML = "No has ingresado ningún Texto.";
+    textNoEncontrado.style.display = "block";
     buttonCopiar.style.display = "none";
+    resultado.style.display = "none";
+    outputSection.style.display = "none";
   } else {
     for (let clave in reemplazosEncriptado) {
       if (reemplazosEncriptado.hasOwnProperty(clave)) {
@@ -58,9 +64,9 @@ function desencriptarCodigo() {
       }
     }
     console.log(textoDesencriptado);
-     buttonCopiar.style.display = "block";
+    buttonCopiar.style.display = "block";
   }
-
+  
   resultado.innerHTML = textoDesencriptado;
   capturarText.value = "";
 }

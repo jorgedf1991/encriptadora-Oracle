@@ -31,7 +31,7 @@ section {
 }
 
 #inputText {
-  display: block;
+  /* display: block; */
   resize: none;
 }
 
@@ -43,9 +43,15 @@ section {
   font-size: 19px;
 }
 
+.button-box{
+  height: 80px;
+  margin-top: 10px;
+}
+
 .btn-encriptar,
 .btn-desencriptar {
   height: 35px;
+  width: 100px;
   background: #333;
   margin: 5px;
   padding: 5px;
@@ -64,12 +70,30 @@ section {
   cursor: pointer;
 }
 
+.mensaje-section {
+  display: none;
+  text-align: center;
+  height: 350px;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+}
+
+img {
+  height: 300px;
+}
+
 footer {
   background-color: #333;
-  color: #fff;
-  text-align: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+footer p{
+  color: #fff;
+  text-align: center;
 }
