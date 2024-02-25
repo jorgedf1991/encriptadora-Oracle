@@ -31,15 +31,29 @@
         </div>
       </section>
 
-      <section id="outputSection" class="outputSection-box">
+      <section id="outputSection">
         <img src="./image/Muñeco.png" alt="" /><br />
         <strong>No se encontro ningun mensaje para encriptar</strong>
-        <button type="submit" onclick="copiar();" class="copiarText"></button>
       </section>
 
       <section class="mensaje-section">
-       <p>No has ingresado un texto que traducir</p>
-       <img src="./image/img-nofound.jpg" alt="Imagen de texto no encontrado">
+        <p>No has ingresado un texto que traducir</p>
+        <img
+          src="./image/img-nofound.jpg"
+          alt="Imagen de texto no encontrado"
+        />
+      </section>
+
+      <section id="box-resultado" class="outputSection-box">
+        <p class="resultado"></p>
+        <button
+          type="submit"
+          onclick="copiar();"
+          class="copiarText"
+          style="display: block"
+        >
+          Copiar
+        </button>
       </section>
     </main>
 

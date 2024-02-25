@@ -43,13 +43,21 @@ section {
   font-size: 19px;
 }
 
-.button-box{
+.outputSection-box {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-box {
   height: 80px;
   margin-top: 10px;
 }
 
 .btn-encriptar,
-.btn-desencriptar {
+.btn-desencriptar,
+.copiarText {
   height: 35px;
   width: 100px;
   background: #333;
@@ -62,7 +70,8 @@ section {
 }
 
 .btn-encriptar:hover,
-.btn-desencriptar:hover {
+.btn-desencriptar:hover,
+.copiarText:hover {
   height: 30px;
   background: white;
   color: #333;
@@ -87,13 +96,12 @@ img {
 
 footer {
   background-color: #333;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
+  height: 70px;
   width: 100%;
 }
 
-footer p{
+footer p {
+  line-height: 70px;
   color: #fff;
   text-align: center;
 }

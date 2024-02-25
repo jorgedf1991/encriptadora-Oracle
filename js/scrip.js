@@ -6,8 +6,6 @@ const reemplazos = {
   u: "ufat",
 };
 
-// const notificacion = document.querySelector(".notificacion");
-const buttonCopiar = document.querySelector(".copiarText");
 const reemplazosEncriptado = {
   ai: "a",
   enter: "e",
@@ -16,25 +14,27 @@ const reemplazosEncriptado = {
   ufat: "u",
 };
 
+let buttonCopiar = document.querySelector(".copiarText");
+
 function encriptarCodigo() {
   let capturarText = document.querySelector("#inputText");
-  let resultado = document.querySelector(".outputSection-box");
+  let outputSectionBox = document.querySelector(".outputSection-box");
   let outputSection = document.querySelector("#outputSection");
   let textNoEncontrado = document.querySelector(".mensaje-section ");
   let textoEncriptador = "";
+  let resultado = document.querySelector(".resultado");
 
   if (capturarText.value == "") {
-    buttonCopiar.style.display = "none";
     textNoEncontrado.style.display = "block";
-    resultado.style.display = "none";
+    outputSectionBox.style.display = "none";
     outputSection.style.display = "none";
   } else {
     for (let i = 0; i < capturarText.value.length; i++) {
       const letraActual = capturarText.value[i];
       textoEncriptador += reemplazos[letraActual] || letraActual;
     }
-     buttonCopiar.style.display = "block";
-     outputSection.style.display = "block";
+    outputSectionBox.style.display = "flex";
+    outputSection.style.display = "none";
     textNoEncontrado.style.display = "none";
   }
 
@@ -44,14 +44,15 @@ function encriptarCodigo() {
 
 function desencriptarCodigo() {
   let capturarText = document.querySelector("#inputText");
-  let resultado = document.querySelector(".outputSection-box");
+  let outputSection = document.querySelector("#outputSection");
+  let outputSectionBox = document.querySelector(".outputSection-box");
   let textNoEncontrado = document.querySelector(".mensaje-section ");
-  let textoDesencriptado = capturarText.value; 
+  let textoDesencriptado = capturarText.value;
+  let resultado = document.querySelector(".resultado");
 
   if (capturarText.value == "") {
     textNoEncontrado.style.display = "block";
-    buttonCopiar.style.display = "none";
-    resultado.style.display = "none";
+    outputSectionBox.style.display = "none";
     outputSection.style.display = "none";
   } else {
     for (let clave in reemplazosEncriptado) {
@@ -63,19 +64,18 @@ function desencriptarCodigo() {
         );
       }
     }
-    console.log(textoDesencriptado);
-    buttonCopiar.style.display = "block";
   }
-  
+
   resultado.innerHTML = textoDesencriptado;
   capturarText.value = "";
 }
 
 function copiar() {
   let pElement = document.querySelector(".resultado");
+  let textoEncriptado = pElement.textContent.trim();
 
   try {
-    navigator.clipboard.writeText(pElement.textContent);
+    navigator.clipboard.writeText(textoEncriptado);
     console.log("Texto copiado al portapapeles");
   } catch (err) {
     console.error("Error al copiar el texto al portapapeles", err);
