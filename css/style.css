@@ -1,4 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -16,6 +23,7 @@ main {
   align-items: center;
   height: 450px;
   padding: 20px;
+  flex: 1; 
 }
 
 section {
@@ -31,8 +39,10 @@ section {
 }
 
 #inputText {
-  /* display: block; */
   resize: none;
+  height: 267px; 
+  width: 100%;
+  box-sizing: border-box; 
 }
 
 #outputSection {
@@ -69,7 +79,7 @@ section {
 }
 
 .button-box-copy {
-  height: 65px;
+  height: 60px;
 }
 
 .btn-encriptar,
@@ -118,7 +128,7 @@ footer {
 }
 
 footer p {
-  line-height: 70px;
+
   color: #fff;
   text-align: center;
 }
