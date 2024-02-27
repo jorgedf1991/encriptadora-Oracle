@@ -1,0 +1,27 @@
+@media screen and (max-width: 450px) {
+  main {
+    flex-direction: column;
+  }
+
+  #outputSection {
+    display: none;
+  }
+
+  .formulario {
+    width: 100%;
+  }
+
+  .outputSection-box {
+    width: 100%;
+    text-align: center;
+    object-fit: contain;
+  }
+
+  .outputSection-box p {
+    font-size: 15px;
+  }
+
+  img {
+    display: none;
+  }
+}
